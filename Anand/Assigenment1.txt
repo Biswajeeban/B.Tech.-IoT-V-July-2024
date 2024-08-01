@@ -1,0 +1,15 @@
+1. What is a Prototype?
+A prototype is an early model of a product used to test ideas and make improvements before final production.
+
+Open Source Prototype Platforms: These are platforms with freely available source code, like Arduino and Raspberry Pi, where you can modify and share the code.
+Closed Source Prototype Platforms: These are proprietary systems with restricted access to the source code, such as some commercial development kits.
+
+2. What is Arduino?
+Arduino is an open-source electronics platform that lets you build interactive projects. It consists of a microcontroller board and a software environment to program it, making it accessible for hobbyists and students.
+
+3. Arduino Uno R3 Key Specifications:
+Main Processor: ATmega328P
+Memory:
+SRAM: 2 KB
+FLASH MEMORY: 32 KB
+EEPROM: 1 KB
