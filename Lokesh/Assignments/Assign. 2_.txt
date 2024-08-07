@@ -1,7 +1,7 @@
 What is an Encoding format? List down encoding formats for various types of data  ( Text, Number, Photo, Audio, Video ).
 
 ~ Encoding Formats: A Brief Overview ~ 
-	Encoding format is essentially a standardized method to translate data into a format that computers can understand and process efficiently. It's like converting human language into 	a language computers can comprehend.
+	Encoding format is essentially a standardized method to translate data into a format that computers can understand and process efficiently. It's like converting human language into a language computers can comprehend.
 
 Different Encoding Formats:
 	Text Encoding
