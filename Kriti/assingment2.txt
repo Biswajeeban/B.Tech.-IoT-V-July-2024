@@ -1,0 +1,6 @@
+Assignment - 2 :---
+
+Encoding - A data encoding format is a standardized method for converting data into a specific format for efficient storage, transmission, and interpretation by computers.
+
+Encoding format for different types of data :-- 
+1. Text - 
