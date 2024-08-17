@@ -22,3 +22,7 @@ void loop() {
   Serial.print(temp);
   Serial.println("°C");
   delay(1000);
+}
+
+Project Link [#2]:
+https://wokwi.com/projects/406487282785269761
