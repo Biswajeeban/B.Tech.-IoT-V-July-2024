@@ -42,13 +42,24 @@ Ans) LED_BUILTIN: This constant refers to the built-in LED on most Arduino board
 
 3. What is the purpose of the setup() function in Arduino programming?
 
-Ans) 
+Ans) setup() is used for the preparation of the Arduino Sketch. It is called once when the Arduino Board is first turned on or reset.
+	> It is used to set pinMode or initialise Serial communication.
 
 4. What does the pinMode() function do in the setup() function?
 
+Ans) The pinMode() function is used to configure a specific pin to behave either as an input or an output, like - 
+	pinMode(pin, mode);
+	> pin: The number of the pin you want to set.
+	> mode: The mode you want to set for the pin, which can be INPUT, or OUTPUT.
+
 5. What is the role of the loop() function in Arduino programming?
 
+Ans) loop() is the execution of the Arduino Sketch. It is called throughout the process until the board is turned off or reset. 
+	> It generally includes the code i.e. to be run continuously.
+
 6. what does the digitalWrite() function do?
+
+Ans)
 
 7. What is the significance of LED_BUILTIN in the code?
 
