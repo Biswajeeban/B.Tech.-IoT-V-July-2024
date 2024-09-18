@@ -1,0 +1,11 @@
+
+
+The mosquitto server is downloaded and implemented in the UNIX terminal of my laptop.
+
+There are 3 photos of which 1 of each represent the part of an mqtt (a broker and client(subscriber and publisher )):
+1. Start the mosquitto server by the typing the code [brew services start mosquitto].
+2. in another terminal we made a subcriber to the [lab_example] topic using the code [mosquitto_sub -h localhost -t lab_example]
+3. in another terminal i made a publisher to the topic [lab_example] using [mosquitto_pub -h localhost -t lab_example -m "\\I am a publisher to this topic\\"]
+4. stop the server with the code [brew services stop mosquitto]
+
+## We can also allow subscriber to subcribe to our topic using our network . 
