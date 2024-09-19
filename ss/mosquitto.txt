@@ -1,0 +1,8 @@
+The mosquitto server is downloaded and implemented in the Ubuntu terminal of my laptop.
+
+There are 3 photos of which 1 of each represent the part of an mqtt (a broker and client(subscriber and publisher )):
+1. Start the mosquitto server by the typing the code [sudo mosquitto].
+2. in another terminal we made a subcriber to the [test] topic using the code [mosquitto_sub -h localhost -t test]
+3. in another terminal i made a publisher to the topic [test] using [mosquitto_pub -h localhost -t test -m "Hello"]
+
+## We can also allow subscriber to subcribe to our topic using our network .
