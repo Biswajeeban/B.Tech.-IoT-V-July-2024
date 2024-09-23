@@ -7,3 +7,5 @@
 ## Lab#3: https://wokwi.com/projects/406487282785269761
 
 ## HandsOn#1: https://wokwi.com/projects/409801191342923777
+
+## HandsOn#2: https://wokwi.com/projects/409805684061827073 
