@@ -1,0 +1,28 @@
+Name :- Anand Loomba 
+Reg NO. :- FET-BAML_2022-26-006
+IOT Assignment-2
+    
+    
+Q. What is an Encoding Format?
+Ans.     A data encoding format is a standardized method for converting data into a specific format for efficient storage, transmission, and interpretation by computers.
+     Encoding Formats for Different Data Types:
+     1. Text:
+     	 ASCII: Basic text encoding.
+     	 UTF-8: Unicode text encoding.
+     	 Base64: Encodes binary to ASCII.
+     2. Number:
+     	Binary: Direct binary representation.
+     	IEEE 754: Floating-point numbers.
+     	Hexadecimal: Base-16 representation.
+     3. Photo (Image):
+     	JPEG: Compressed images.
+     	PNG: Lossless images.
+     	GIF: Bitmap and animations.
+     4. Audio:
+     	MP3: Compressed audio.
+     	WAV: Uncompressed audio.
+     	FLAC: Lossless audio.
+     5. Video:
+     	MP4: Compressed video.
+     	AVI: Older video format.
+      	MKV: Flexible video container.
