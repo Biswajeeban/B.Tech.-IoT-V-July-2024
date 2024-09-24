@@ -1,0 +1,27 @@
+NAME: KUSHAL DEBNATH
+REG NO. FET-BAML-2022-26-005
+IOT ASSIGNMENT 3
+
+
+Q. Explain Basic Structure of an Arduino Program.
+
+Ans. An Arduino program has a basic structure that consists of two main functions: 
+setup() and loop(). But there is also header for importing library and macro definition . 
+
+Basic Structure
+1. setup() Function: Runs once at the start to initialize settings.
+
+ eg:- void setup() {
+	pinMode(LED_BUILTIN, OUTPUT);
+	}
+
+2. loop() Function: Runs repeatedly to execute the main logic.
+
+eg :- void loop() { 
+	digitalWrite(LED_BUILTIN, HIGH);
+	delay(1000);
+ 	digitalWrite(LED_BUILTIN,LOW);
+	delay(1000);
+}
+
+The above example is for blinking of an builtin led for 1 second of on and off. 
