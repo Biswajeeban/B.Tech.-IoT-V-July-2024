@@ -104,7 +104,7 @@ void loop() {
 
 ###### Output: _Distance in CM: 121 ; Distance in inches: 47_
 
-## HC-SR04 + PushButton
+### HC-SR04 + PushButton
 
 Step#3: Now, a button can be connected to Digital `2` and diagonally to **`GND`**.
 
