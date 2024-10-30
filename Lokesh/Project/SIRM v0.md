@@ -34,7 +34,7 @@ A push button on the ESP32 can be used to manually trigger alerts or change syst
 
 ## Working Procedure
 
- Step#1: The Espressif 32 is connected to the Arduino IDE, after configuring the correct **COM** port [ _`Silicon Labs CP210c USB to UART Bridge`_ ] from the **DeviceManager** ( _here, `COM12`_ ).
+ Step#1: The Espressif 32 is connected to the Arduino IDE, after configuring the correct **COM** port [ _`Silicon Labs CP210x USB to UART Bridge`_ ] from the **DeviceManager** ( _here, `COM12`_ ).
 
 Step#2: From Boards Manager, we need to select `ESP32 Dev Module` to start working on it.
 
