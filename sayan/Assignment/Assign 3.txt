@@ -1,0 +1,25 @@
+Explain Basic Structure of an Arduino Program.
+
+An Arduino program (often called a "sketch") has a basic structure that consists of two main functions: setup() and loop(). Here’s a breakdown of the basic structure:
+
+Basic Structure
+1.	Global Variables (Optional): Define variables used throughout the sketch.
+
+        int sensorValue = 0;
+
+
+2.	setup() Function: Runs once at the start to initialize settings.
+
+        void setup() { 
+        pinMode(LED_BUILTIN, OUTPUT); 
+        Serial.begin(9600); }
+
+
+
+3.	loop() Function: Runs repeatedly to execute the main logic.
+
+        void loop() { 
+        sensorValue = analogRead(A0); 
+        Serial.println(sensorValue); 
+        digitalWrite(LED_BUILTIN, HIGH); delay(1000);
+        digitalWrite(LED_BUILTIN, LOW); delay(1000); }

@@ -1,0 +1,54 @@
+Lab-3
+Lab Exercise: Reading and Displaying Humidity and Temperature Data
+
+Components Required
+•	1 x DHT11 or DHT22 sensor
+•	1 x 10kΩ resistor (for DHT22, optional for DHT11)
+•	Jumper wires
+•	Breadboard (optional)
+•	Arduino board (e.g., Arduino Uno)
+
+Step 1: Install the DHT Library in the Arduino IDE
+1.	Open the Arduino IDE.
+2.	Go to Sketch > Include Library > Manage Libraries...
+3.	In the Library Manager, search for “DHT” and install the DHT sensor library by Adafruit.
+4.	Also, install the Adafruit Unified Sensor library, as it's a dependency for the DHT library.
+________________________________________
+Step 2: Wire the DHT Sensor to the Arduino
+1.Identify the Pins on the DHT Sensor:
+    Most DHT11 or DHT22 sensors have three or four pins: VCC, DATA, (NC or nothing), and GND.
+
+2.Make Connections:
+o	Connect the VCC pin on the sensor to the 5V pin on the Arduino.
+o	Connect the GND pin on the sensor to the GND pin on the Arduino.
+o	Connect the DATA pin on the sensor to digital pin 2 on the Arduino.
+3.	Add a Resistor (if needed):
+o	For DHT22, place a 10kΩ pull-up resistor between the VCC and DATA pin. This is optional for DHT11 but improves signal stability.
+________________________________________
+Step 3: Write the Code
+1.	Open the Arduino IDE and create a new sketch.
+2.	Enter the Code: Use the following code to read and display temperature and humidity data.
+
+Code:
+
+#include <DHT.h>
+#define k 7
+#define DHTTYPE DHT22
+DHT dht(k, DHTTYPE);
+float humid, temp;
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+void loop() {
+  delay(200);
+  humid = dht.readHumidity();
+  temp = dht.readTemperature();
+  Serial.print("Humidity: ");
+  Serial.print(humid);
+  Serial.print(" %  Temperature: ");
+  Serial.print(temp);
+  Serial.println("°C");
+  delay(1000);
+} 
+wokwi Lab-3 @ Sketch 

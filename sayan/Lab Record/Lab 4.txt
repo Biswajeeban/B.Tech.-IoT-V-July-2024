@@ -1,0 +1,102 @@
+Lab 4: Using Mosquitto MQTT (Pub-Sub):
+
+Step 1: Installing and Configuring Mosquitto as an MQTT Broker
+1.	Download and Install Mosquitto:
+o	Go to the official Mosquitto download page.
+o	Download the Windows installer and run the installation.
+o	During installation, Mosquitto will be added as a Windows service, allowing it to run in the background automatically.
+2.	Add Mosquitto to the System PATH:
+o	Open System Properties and go to Environment Variables.
+o	Locate and edit the Path variable to include C:\Program Files\mosquitto.
+o	Adding Mosquitto to the PATH allows you to run mosquitto commands directly from the Command Prompt.
+3.	Starting and Stopping Mosquitto as a Service:
+o	To start Mosquitto manually, open Command Prompt with administrator privileges and enter:
+bash
+net start mosquitto
+o	To stop the service, run:
+bash
+net stop mosquitto
+4.	Running Mosquitto with Verbose Logging:
+o	Navigate to the Mosquitto installation directory to start the broker with verbose logging:
+bash
+Copy code
+cd "C:\Program Files\mosquitto"
+mosquitto.exe -v
+o	The -v flag provides detailed output on the broker’s activities, which is useful for debugging.
+
+
+
+
+
+
+	In Linux [ WSL*: Ubuntu 22.04 LTS ]:
+	-  In Terminal > wsl --install -d Ubuntu-22.04 > \ E / N \ T / E \ R /
+	- Restart the machine, and Launch Ubuntu 22.04
+		- $sudo apt update 
+		- $sudo apt install mosquitto mosquitto-clients
+	Starting mosquitto services:
+		- $sudo systemctl ( enable /start ) mosquitto
+
+	Mosquitto Broker Service Status can be checked here:
+		- $sudo systemctl status mosquitto
+
+
+	- Once verified service status, transmission can be carried on.
+	Stopping mosquitto services:
+		- $sudo systemctl stop mosquitto
+
+
+
+Step 2: Setting Up Publisher and Subscriber (Pub/Sub) on Windows
+1.	Open Command Prompt:
+o	After adding Mosquitto to the PATH, open a Command Prompt or PowerShell window to run MQTT commands.
+2.	Start a Subscriber:
+o	The subscriber will listen to a topic for messages. In the Command Prompt, enter:
+bash
+Copy code
+mosquitto_sub -h localhost -t "test/topic"
+o	Here, -h localhost specifies the broker’s address (your local machine) and -t "test/topic" specifies the topic to subscribe to.
+3.	Start a Publisher:
+o	Open another Command Prompt window, and enter:
+bash
+Copy code
+mosquitto_pub -h localhost -t "test/topic" -m "Hello MQTT"
+o	This command sends the message "Hello MQTT" to the test/topic. Any subscribers to this topic will receive the message.
+________________________________________
+
+
+Step 3: Accessing Mosquitto Broker from a Linux Environment
+1.	Locate the IP Address of Your Windows Machine:
+o	Find your machine’s IP by running the following command in Command Prompt:
+ipconfig
+Note the IP address under your network connection (usually 192.168.x.x).
+Connect to the Broker from Linux:
+In a Linux environment with Mosquitto installed, use the mosquitto_sub and mosquitto_pub commands to connect to the broker running on your Windows machine.
+To subscribe, use:
+mosquitto_sub -h <Windows_IP> -t "test/topic"
+o	To publish a message from Linux to the Windows broker:
+mosquitto_pub -h <Windows_IP> -t "test/topic" -m "Hello from Linux"
+o	Replace <Windows_IP> with your Windows machine’s IP address.
+________________________________________
+
+
+Step 4: Testing and Troubleshooting
+•	Verify Broker Activity:
+o	In the Command Prompt on your Windows machine, use mosquitto.exe -v to view incoming connections, message activity, and potential issues.
+•	Firewall Considerations:
+o	Ensure that your Windows firewall allows connections on port 1883, the default port for MQTT. Configure this by adding a firewall rule for the Mosquitto executable or allowing inbound connections on port 1883.
+
+	Testing MQTT Services [ Message Transmission: WinOS11 + Ubuntu 22.04 ]:
+	- Open 2 Terminals:
+		# 1st: mosquitto_sub.exe -h localhost -t test/topic
+
+
+
+	# 2nd: mosquitto_pub.exe -h localhost -t test/topic -m " Light was here! "
+
+
+
+*Windows Subsystem for Linux
+
+
+

@@ -1,0 +1,50 @@
+LAB 6: Working with ultrasonic sensors . 
+
+Measuring distance of a somethings using ultrasonic sensors 
+
+Step 1: Installing the Arduino IDE and Selecting the Board
+To get started with programming the Arduino Uno, you first need the Arduino IDE. You can download it from the official Arduino website (https://www.arduino.cc/en/software) and install it on your computer. Once installed, open the Arduino IDE.
+In the Arduino IDE, you’ll need to select the correct board type. Go to Tools > Board and choose Arduino Uno from the list. Selecting the board tells the IDE which type of Arduino you’re using and helps it compile code properly for that specific model.
+________________________________________
+
+Step 2: Connecting the Arduino Uno to Your Computer and Selecting the Port
+Connect your Arduino Uno to your computer using a USB cable. After connecting, you’ll need to select the correct port in the Arduino IDE so that the computer can communicate with the board. Go to Tools > Port and look for a port labeled with something like "COM3" (on Windows) or "/dev/cu.usbmodem" (on macOS), often with "Arduino Uno" next to it. Select this port.
+________________________________________
+
+Step 3: Writing or Selecting Code
+You can now write your code or open an existing sketch. For example, to test your setup, open the "Blink" example that comes with the Arduino IDE. Go to File > Examples > 01.Basics > Blink. This program will make the onboard LED blink on and off every second.
+________________________________________
+
+Step 4: Compiling and Uploading the Code
+Once your code is ready, the next step is to compile and upload it to the Arduino Uno. First, click the Verify button (the checkmark icon) to compile your code. This process checks for any syntax errors or other issues in your code.
+Once the code is verified, you can upload it to the Arduino Uno by clicking the Upload button (the right-pointing arrow icon). You should see the LED on the board blink rapidly as the code is uploaded. When finished, the board will reset, and the code will start running—if you’re using the Blink example, the onboard LED should start blinking at one-second intervals.
+________________________________________
+
+Step 5: Testing and Running the Code
+After uploading, observe your Arduino Uno to ensure that the code is running as expected. If you’re running the Blink example, the built-in LED should now blink on and off, confirming that your setup is working. From here, you can experiment with other code examples or create your own sketches to explore more functionalities.
+
+
+CODE:
+#include <DHT.h>
+#define PIN_TRIG 9
+#define PIN_ECHO 8
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PIN_TRIG, OUTPUT);
+  pinMode(PIN_ECHO, INPUT);
+}
+
+void loop() {
+  digitalWrite(PIN_TRIG, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(PIN_TRIG, LOW);
+  int duration = pulseIn(PIN_ECHO, HIGH);
+  float distanceCm = duration / 58.0;
+
+  Serial.print("Distance in CM: ");
+  Serial.println(distanceCm);
+
+  delay(1500);
+}
+

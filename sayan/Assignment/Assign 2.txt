@@ -1,0 +1,30 @@
+What is an Encoding Format?
+An encoding format is a standardized method for transforming data into a specific structure or sequence of bytes, ensuring efficient storage, transmission, and interpretation by computers or other devices. Encoding formats are essential for maintaining the integrity and usability of data across different platforms and systems.
+
+Encoding Formats for Different Data Types:
+
+1.Text:
+   ASCII: Basic text encoding.
+   UTF-8: Unicode text encoding.
+   Base64: Encodes binary to ASCII.
+
+2. Number:
+   Binary: Direct binary representation.
+   IEEE 754: Floating-point numbers.
+   Hexadecimal: Base-16 representation.
+
+3. Photo (Image):
+   JPEG: Compressed images.
+   PNG: Lossless images.
+   GIF: Bitmap and animations.
+
+4. Audio:
+   MP3: Compressed audio.
+   WAV: Uncompressed audio.
+   FLAC: Lossless audio.
+
+5. Video:
+   MP4: Compressed video.
+   AVI: Older video format.
+   MKV: Flexible video container.
+
