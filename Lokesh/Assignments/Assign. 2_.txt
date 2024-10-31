@@ -1,0 +1,45 @@
+What is an Encoding format? List down encoding formats for various types of data  ( Text, Number, Photo, Audio, Video ).
+
+~ Encoding Formats: A Brief Overview ~ 
+	Encoding format is essentially a standardized method to translate data into a format that computers can understand and process efficiently. It's like converting human language into a language computers can comprehend.
+
+Different Encoding Formats:
+	Text Encoding
+		Text data is represented by characters, which are assigned specific numerical values. These values are then stored and transmitted in a specific format.
+
+	- ASCII (American Standard Code for Information Interchange): Represents 128 characters, including uppercase and lowercase letters, numbers, punctuation, and control characters.
+	- Unicode: A more comprehensive character encoding standard, capable of representing text in almost all languages. It includes ASCII as a subset.
+	- UTF-8: A variable-length encoding scheme compatible with ASCII, widely used for web pages and email.
+	
+	Number Encoding
+		Numbers are represented digitally using different numerical systems.
+
+	- Binary: Uses only 0s and 1s.
+	- Decimal: The base-10 system we commonly use.
+	- Hexadecimal: Uses 16 digits (0-9, A-F).
+	- Floating-point: Represents real numbers with a decimal point.
+	
+	Image Encoding
+		Images are represented by pixels, each with color information.
+
+	- JPEG (Joint Photographic Experts Group): Lossy compression, suitable for photographs.
+	- PNG (Portable Network Graphics): Lossless compression, suitable for images with sharp edges and text.
+	- GIF (Graphics Interchange Format): Supports animation and transparency, often used for simple images and logos.
+	- BMP (Bitmap): Uncompressed format, large file size.
+	- TIFF (Tagged Image File Format): Lossless compression, supports various image depths.
+	
+	Audio Encoding
+		Audio data is represented by digital samples of sound waves.
+
+	- MP3: Lossy compression, widely used for music.
+	- AAC (Advanced Audio Coding): Lossy compression, often used in iTunes and digital broadcasting.
+	- WAV (Waveform Audio File): Lossless compression, high-quality audio format.
+	- FLAC (Free Lossless Audio Codec): Lossless compression, maintains audio quality.
+
+	Video Encoding
+		Video data combines image and audio data.
+
+	- MP4 (MPEG-4 Part 14): Commonly used for video storage and distribution.
+	- AVI (Audio Video Interleave): Container format supporting various codecs.
+	- MOV (QuickTime Movie): Apple's video format.
+	- WMV (Windows Media Video): Microsoft's video format.

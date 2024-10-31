@@ -1,0 +1,28 @@
+##Using a Digital Humidity & Temperature Sensor
+_______________________________________________________
+#include <DHT.h>
+#define light 7
+#define DHTTYPE DHT22
+
+DHT dht(light, DHTTYPE);
+
+float humid, temp;
+
+void setup() {
+  Serial.begin(9600);
+  dht.begin();
+}
+void loop() {
+  delay(200);
+  humid = dht.readHumidity();
+  temp = dht.readTemperature();
+  Serial.print("Humidity: ");
+  Serial.print(humid);
+  Serial.print(" %  Temperature: ");
+  Serial.print(temp);
+  Serial.println("°C");
+  delay(1000);
+}
+
+Project Link [#2]:
+https://wokwi.com/projects/406487282785269761

@@ -1,0 +1,86 @@
+##Blinking the InBuilt LED
+______________________________________________
+
+void setup() { 
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(500); 
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(500);
+}
+
+1. Blink inbuilt LED of your board and explain the program you wrote to blink it.
+
+	Explain these methods:
+	pinMode(LED_BUILTIN, OUTPUT);
+	digitalWrite(LED_BUILTIN, HIGH);
+
+Ans) pinMode(..., ...) is the method to specify the I/O pin that we are going to use to program the circuit. digitalWrite is the method to specify the action i.e. to be performed, here HIGH 	means to provide higher voltage ( either 3.3V or 5v) to turn on the InBuilt LED.
+
+2. LED_BUILTIN, OUTPUT,INPUT, LOW, HIGH: What do they actually refer to ? Explain what is a Macro Definition, How do you create a Macro definition and what is the purpose of its existence?
+
+Ans) LED_BUILTIN: This constant refers to the built-in LED on most Arduino boards, typically connected to digital pin 131. It’s used to easily control the on-board LED without needing 	to specify the pin number directly.
+	OUTPUT: To produce an Output, here when the pin is set to OUTPUT, it can send voltage to other components (e.g., turning on an LED).
+	INPUT: Used with the pinMode() function to set a pin as an input. When a pin is set to INPUT, it can read voltage from other components (e.g., reading the state of a button).
+	HIGH: This constant represents a high voltage level (e.g., 5V on a 5V board or 3.3V on a 3.3V board). When a pin is set to HIGH, it outputs this voltage level.
+	LOW: This constant represents a low voltage level (0V). When a pin is set to LOW, it outputs 0V.
+	
+	** Macro Definition
+	A macro definition in programming is a way to define a piece of code that can be reused multiple times. In C/C++ (the language used for Arduino sketches), macros are defined using the #define preprocessing directive.
+
+	#define light 7
+         > In this example, light is defined as 7. Whenever light is used in the code, it will be replaced by 7 during the pre-processing stage before the actual compilation.
+
+	Purpose of Macro Definitions:
+
+	> Code Readability: Using meaningful names instead of numbers makes the code easier to read and understand.
+	> Maintainability: If you need to change the pin number, you only need to update the macro definition instead of changing every instance in the code.
+	> Reusability: Macros can be used to define common pieces of code that are reused multiple times, reducing redundancy.
+
+3. What is the purpose of the setup() function in Arduino programming?
+
+Ans) setup() is used for the preparation of the Arduino Sketch. It is called once when the Arduino Board is first turned on or reset.
+	> It is used to set pinMode or initialise Serial communication.
+
+4. What does the pinMode() function do in the setup() function?
+
+Ans) The pinMode() function is used to configure a specific pin to behave either as an input or an output, like - 
+	pinMode(pin, mode);
+	> pin: The number of the pin you want to set.
+	> mode: The mode you want to set for the pin, which can be INPUT, or OUTPUT.
+
+5. What is the role of the loop() function in Arduino programming?
+
+Ans) loop() is the execution of the Arduino Sketch. It is called throughout the process until the board is turned off or reset. 
+	> It generally includes the code i.e. to be run continuously.
+
+6. what does the digitalWrite() function do?
+
+Ans) digitalWrite() is the function used to set a digital pin to either HIGH or LOW voltage.
+
+7. What is the significance of LED_BUILTIN in the code?
+
+Ans) LED_BUILTIN refers to the pin number connected to the on-board LED, typically pin 13.
+
+8. Why is there a delay() function in the loop() function, and what does it do?
+
+Ans) The delay() function pauses the program for a specified time in milliseconds.
+
+9. How does the setup() function differ from the loop() function?
+
+Ans) The setup() function runs once at the start to initialize settings, while the loop() function runs repeatedly.
+
+10. What will happen if you change the value in the delay() function from 1000 to 500?
+
+Ans) Changing the delay() value from 1000 to 500 makes the LED blink twice as fast, i.e. 1000ms = 1seconds, 500ms = 0.5seconds.
+
+11. What is the significance of HIGH and LOW in the digitalWrite() function?
+
+Ans) HIGH sets the pin voltage to 5V (or 3.3V), and LOW sets it to 0V (ground).
+
+12. How would you modify the code to make the LED stay on for 2 seconds and off for 1 second?
+
+Ans) The code can be modified to delay(2000) after digitalWrite(LED_BUILTIN, HIGH) for staying on for 2seconds and delay(1000) after digitalWrite( LED_BUILTIN, LOW ) to Off for 1 second.

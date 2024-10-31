@@ -1,0 +1,14 @@
+##Blinking an External LED ( Red ) w/ Resistor
+_______________________________________________________
+#define light 12
+
+void setup() {
+  pinMode(light, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(light, HIGH); 
+  delay(200);
+  digitalWrite(light, LOW);
+  delay(500);              
+  } 

@@ -1,0 +1,27 @@
+Assignment#3
+ 	Explain Basic Structure of an Arduino Program.
+	There are two required parts or functions that enclose blocks of statements.
+	setup() is the preparation, loop() is the execution.
+	Both functions are required for the program to work.
+
+void setup( )
+{ 
+statements;
+}
+void loop( )
+{
+statements;
+}
+
+	The setup() function is called once, when the Arduino board is first turned on or reset. It is used to initialize the board and set up the hardware.
+
+The setup function should follow the declaration of any variables at the very beginning of the program. It is the first function to run in the program, is run only once, and is used to set pinMode or initialize serial communication.
+
+Setting pinMode: This tells the Arduino whether a specific pin is going to be used for input (reading data) or output (sending data).
+For example, if you have an LED connected to pin 13, you would specify in the setup() function that pin 13 is an output pin.
+
+Initializing Serial Communication: This is like opening a communication channel between your Arduino and your computer or another device. This is useful for sending data back and forth.
+
+	The loop() function is called repeatedly, until the Arduino board is turned off or reset. It is where the Arduino program does most of its work.
+
+The loop function follows next and includes the code to be executed continuously – reading inputs, triggering outputs, etc.

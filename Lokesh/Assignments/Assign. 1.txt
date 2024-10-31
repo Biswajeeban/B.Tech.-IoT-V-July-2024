@@ -1,0 +1,25 @@
+1.	Prototype? Open-Source and Closed-Source Prototype Platforms:
+A prototype is an early sample, model, or release of a product built to test a concept or process. 
+
+		Open-source: Open source is source code that is made freely available for possible modification and redistribution. 
+E.g. Arduino, Raspberry Pi.
+		Closed-source: Closed-source model source code is not released to the public, i.e. it is not available on the public domains. 
+E.g. Google Earth, Skype, WinRAR, Microsoft Windows, Mac OS
+2.	Arduino?
+Arduino is a small popular electronic machine that makes it very easy for people to make electronic things.
+It has two parts: 
+		a Circuit Board
+		a program that lets people tell the circuit board what to do.
+3.	Arduino Uno R3 Key Specifications:
+		Main Processor
+		•	ATmega328P, a modified Harvard architecture 8-bit RISC* processor core. *Reduced Instruction Set Computer
+		Memory (SRAM, FLASH MEMORY, EEPROM)
+		•	SRAM: Static Random Access Memory a type of RAM which uses a flip-flop to store 1-bit of data.
+				The system's temporary data or run-time data is stored in the SRAM; with a size of 2KB.
+		•	FLASH MEMORY: In Arduino, the Flash stores the application code to be run.
+				The Size of Flash Memory is 32KB.
+		•	EEPROM: An Electrically Erasable Programmable Read-Only Memory. It is a form of non-volatile memory that can remember things with the power being turned off, or after resetting the Arduino. 
+				The Size of EEPROM is 1KB.
+	
+		I/O Pins
+		•	An Arduino has 14 digital input/output pins (of which 6 can be used as PWM* outputs), 6 analog inputs.
