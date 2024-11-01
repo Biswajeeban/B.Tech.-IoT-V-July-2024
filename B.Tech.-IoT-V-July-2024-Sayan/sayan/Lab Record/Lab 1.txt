@@ -1,0 +1,39 @@
+Lab-1
+Lab Exercise: Blinking the In-Built LED
+
+Step 1: Connect and Set Up the Arduino
+1.	Connect the Arduino to Your Computer: Use a USB cable to connect the Arduino board to your computer. The Arduino’s onboard LED is connected to pin 13, so no external components are required.
+2.	Open the Arduino IDE: Launch the Arduino IDE on your computer.
+
+Step 2: Write the Code
+1.	Open a New Sketch: In the Arduino IDE, open a new sketch by going to File > New.
+2.	Enter the Code: Type the following code, which will turn the LED on and off at one-second intervals:
+
+void setup() { 
+  pinMode(LED_BUILTIN, OUTPUT);
+}
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000); 
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000);
+}
+
+
+
+
+
+
+
+Step 3: Select the Board and Port
+1.	Choose the Board: Go to Tools > Board and select your Arduino model (e.g., Arduino Uno).
+2.	Select the Port: Go to Tools > Port and choose the port your Arduino is connected to. This is usually labeled with "Arduino" and a COM number (e.g., COM3 on Windows or /dev/cu.usbmodem on macOS).
+________________________________________
+Step 4: Upload the Code
+1.	Verify the Code: Click the Verify button (the checkmark icon) to compile the code and check for any errors.
+2.	Upload the Code: Click the Upload button (the right-arrow icon) to upload the code to your Arduino.
+________________________________________
+Step 5: Observe the In-Built LED Blinking
+Once the upload is complete, the onboard LED should start blinking on and off every second. The LED will turn on for one second, then off for one second, in a continuous loop.
+Wokwi Lab-1 @ project
+

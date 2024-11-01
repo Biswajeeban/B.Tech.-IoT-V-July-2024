@@ -1,0 +1,16 @@
+1. What is a Prototype? What are Open source and closed source prototype platforms?
+
+A prototype is an early sample, model, or product release used to test a concept or method. It is a prototype version from which subsequent forms are created. System analysts and users utilize prototypes to test a new design and improve precision. - Open Source Prototype systems: These systems' designs, software, and specifications are all publicly available. This enables people to alter, share, and utilize the designs without restriction. Arduino and Raspberry Pi are few examples. - Closed Source Prototype Platforms: These platforms keep their design, software, and specs confidential. Users are not permitted to legally change or share the design. One example is Parallax's BASIC Stamp microcontroller.
+
+2. What is Arduino?
+
+Arduino is an open-source electronics platform based on easy-to-use hardware and software. It consists of a microcontroller, an integrated development environment (IDE), and a standard programming language. Arduino boards are capable of reading inputs – light on a sensor, a finger on a button, or a Twitter message – and turning it into an output – activating a motor, turning on an LED, publishing something online.
+
+3. Write down Arduino Uno R3 Key Specifications:
+
+Main Processor: ATmega328P
+SRAM: 2 KB
+FLASH MEMORY: 32 KB (ATmega328P) of which 0.5 KB used by bootloader
+EEPROM: 1 KB
+Digital I/O Pins: 18 
+Analog Input Pins: 6

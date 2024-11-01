@@ -1,0 +1,58 @@
+Lab-2
+Lab Exercise: Blinking an External Red LED
+
+Components Required
+•	1 x Red LED
+•	1 x 220Ω Resistor (to limit the current and protect the LED)
+•	Jumper wires
+•	Breadboard (optional, but makes it easier to connect the components)
+•	Arduino board (e.g., Arduino Uno)
+
+Step 1: Connect the LED and Resistor to the Arduino
+1.	Identify the LED Pins:
+o	The anode (longer leg) is the positive terminal and should connect to the Arduino output pin.
+o	The cathode (shorter leg) is the negative terminal and should connect to ground.
+2.	Connect the Resistor:
+o	Insert the resistor into the breadboard or directly connect it to the anode (longer leg) of the LED. Connect the other end of the resistor to a row that you’ll connect to pin 9 on the Arduino (or any digital pin you choose to use).
+3.	Connect the Cathode (Ground):
+o	Insert the LED’s cathode (shorter leg) into a row connected to the Arduino ground (GND).
+4.	Use Jumper Wires to Connect:
+o	Use a jumper wire to connect the row with the resistor to pin 9 on the Arduino.
+o	Use another jumper wire to connect the row with the LED’s cathode to the Arduino’s GND pin.
+Step 2: Write the Code
+1.	Open the Arduino IDE: Launch the Arduino IDE on your computer.
+2.	Enter the Code: Use the following code to blink the external LED on and off:
+
+#define k 12
+void setup() {
+  pinMode(k, OUTPUT);
+}
+void loop() {
+  digitalWrite(k, HIGH); 
+  delay(500);
+  digitalWrite(light, LOW);
+  delay(500);              
+  } 
+
+
+
+
+
+
+
+
+
+
+
+Step 3: Select the Board and Port
+1.	Select the Board: Go to Tools > Board and choose your Arduino model (e.g., Arduino Uno).
+2.	Choose the Port: Go to Tools > Port and select the port where the Arduino is connected.
+________________________________________
+Step 4: Upload the Code
+1.	Upload the Code: Click the Upload button (right-arrow icon) to upload the code to your Arduino.
+________________________________________
+Step 5: Observe the External LED Blinking
+Once the upload is complete, the external LED should start blinking on and off every second. The LED will turn on for one second, then off for one second, repeating in a loop.
+Wokwi Lab-2 @ Sketch 
+
+

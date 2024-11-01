@@ -1,0 +1,96 @@
+Lab#8 Use of ESP32, upload code on ESP 32 to blink onboard LED
+
+Step 1: Installing the ESP32 Board from the Board Manager
+
+To get started with programming the ESP32, you need to install the appropriate board files in the Arduino IDE. First, open your Arduino IDE and navigate to File > Preferences. In the "Additional Boards Manager URLs" field, add this link: https://dl.espressif.com/dl/package_esp32_index.json. This link will allow the Arduino IDE to download and install the necessary ESP32 files.
+Next, go to Tools > Board > Boards Manager and type "ESP32" into the search bar. You should see the "ESP32 by Espressif Systems" option in the list. Select this option and click the Install button. This process will download all the relevant files for the ESP32 platform. Once installation is complete, you can program various ESP32 models directly from the Arduino IDE.
+________________________________________
+
+Step 2: Selecting the ESP32 Board and Port
+
+Once you’ve installed the ESP32 board files, you need to choose the specific model of the ESP32 you’re working with. In the Arduino IDE, go to Tools > Board and scroll down until you see the ESP32 options. Select the model that matches your board (for instance, “ESP32 Dev Module” is a common choice).
+After selecting the board, you need to assign the correct communication port so the IDE can connect to the ESP32. Connect your ESP32 board to your computer via USB, then go to Tools > Port. Here, you should see a COM port listed, which represents the USB port where the ESP32 is connected. Select this port to establish a connection with the board.
+________________________________________
+
+Step 3: Compiling and Uploading the Code
+
+With the board and port selected, you’re now ready to write, compile, and upload code to your ESP32. Write or open an Arduino sketch you’d like to upload. To make sure your code compiles without errors, click on the Verify button in the Arduino IDE. This will check for syntax errors or any issues in your code and compile it.
+Once verified, you can upload the code to the ESP32 by pressing the Upload button (a right-pointing arrow icon in the toolbar). During the upload, you might see the LED on the ESP32 flashing, indicating that it’s receiving data. Some ESP32 models require you to press a "BOOT" button during the initial seconds of the upload process to put the board into programming mode. Once the upload is complete, the ESP32 will automatically restart, and your code should begin executing.
+________________________________________
+
+Following these steps will enable you to program and work with your ESP32 board easily. Once you've completed these setup steps, you can experiment with different code examples and features that take advantage of the ESP32's capabilities. Now let’s write the codes and test it out.
+First for blinking inbuilt LED 
+Second for finding nearby WIFI using ESP 32 boards
+
+Code 1 : blinking inbuilt led
+
+#define LED_PIN 2 
+void setup() {
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(LED_PIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_PIN, LOW);
+  delay(1000);
+}
+
+Code 2 : Finding nearby WIFI using esp32
+
+#include "WiFi.h"
+
+void setup() {
+  Serial.begin(9600);
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
+  delay(100);
+
+  Serial.println("Setup done");
+}
+
+void loop() {
+
+  Serial.println("Scan start");
+  int n = WiFi.scanNetworks();
+  Serial.println("Scan done”);
+
+  if (n == 0) {
+    Serial.println("no networks found");
+  } else {
+    Serial.print(n);
+    Serial.println(" networks found");
+    Serial.println("Nr | SSID                             | RSSI | CH | Encryption");
+    for (int i = 0; i < n; ++i) {
+
+      Serial.printf("%2d", i + 1);
+      Serial.print(" | ");
+      Serial.printf("%-32.32s", WiFi.SSID(i).c_str());
+      Serial.print(" | ");
+      Serial.printf("%4ld", WiFi.RSSI(i));
+      Serial.print(" | ");
+      Serial.printf("%2ld", WiFi.channel(i));
+      Serial.print(" | ");
+      switch (WiFi.encryptionType(i)) {
+        case WIFI_AUTH_OPEN:            	     Serial.print("open"); break;
+        case WIFI_AUTH_WEP:             	     Serial.print("WEP"); break;
+        case WIFI_AUTH_WPA_PSK:        	     Serial.print("WPA"); break;
+        case WIFI_AUTH_WPA2_PSK:                   Serial.print("WPA2"); break;
+        case WIFI_AUTH_WPA_WPA2_PSK:  	     Serial.print("WPA+WPA2"); break;
+        case WIFI_AUTH_WPA2_ENTERPRISE:    Serial.print("WPA2-EAP"); break;
+        case WIFI_AUTH_WPA3_PSK:       	     Serial.print("WPA3"); break;
+        case WIFI_AUTH_WPA2_WPA3_PSK:        Serial.print("WPA2+WPA3"); break;
+        case WIFI_AUTH_WAPI_PSK:        	     Serial.print("WAPI"); break;
+        default:                        			     Serial.print("unknown");
+      }
+
+      Serial.println();
+      delay(10);
+    }
+  }
+  Serial.println(“");
+
+  WiFi.scanDelete();
+
+  delay(5000);
+}

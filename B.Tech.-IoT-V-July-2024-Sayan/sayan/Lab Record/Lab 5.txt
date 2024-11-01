@@ -1,0 +1,65 @@
+Lab 5: Building a web app using Node-Red to fetch DHT sensor data and display it on the web app dashboard
+Installing & Initialising node red:
+▪	Open node.js > npm install node-red-dashboard
+▪	[postinstallation] > elevated cmd: node-red
+
+In client application, browsed localhost:1880 [ accessing node red]:
+▪	Inside the nodered window, a flow was created w/ the nodes as:
+            > serial-in ( arduino uno r3 board )
+            > debugger 
+            > dht function
+            > 2 gauges (humidity & temperature)
+ 
+
+▪	Serial in node: configured it to read from the correct serial port where my arduino is connected (e.g., com7) > set the baud rate to 9600.
+▪	Configure the dht function as:
+
+var m = msg.payload.split(',');
+if (m.length === 2) {
+var h = { payload: parsefloat(m[0]) };
+            var t = { payload: parsefloat(m[1]) };
+            return [h, t];
+} else {
+return null; }
+
+▪	Adjusting Gauge Nodes:
+Humidity:
+        - Title as “ Humidity ”. 
+        - Value format as ‘ {{value}}% ’.
+        - Range Value: 0 ~ 100 %.
+
+Temperatue:
+        - Title as ' Temperature '.
+        - Value format as ‘ {{value}}°C ’.
+
+*Ensure that Humidity & Temperature are in the same group
+
+Deployment: 
+▪	Uploaded DHT11 /22 Sketch to the Arduino Board through its IDE:
+#include <dht.h>
+#define dhtpin 3 
+#define dhttype dht11
+dht dht(dhtpin, dhttype);
+
+void setup() {
+serial.begin(9600);
+dht.begin();
+ }   
+
+void loop()  {
+float h = dht.readhumidity();
+float t = dht.readtemperature();
+if (isnan(h) || isnan(t)) {
+serial.println("failed to read from dht sensor!");
+} 
+else {
+serial.println(string(h) + "," + string(t));
+ } 
+delay(2000);
+ }
+▪	After uploading this sketch, close the IDE.
+▪	Deploy the flow in NodeRED.
+▪	Check the Dashboard in the upper-right corner, for the Humidity and Temperature Gauge.
+
+OUTPUT ON THE DASHBOARD:
+ 
